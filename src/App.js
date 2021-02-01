@@ -5,8 +5,9 @@ import {
   Switch, 
   Route,
 } from 'react-router-dom'
-import Index from './Views/index';
-import BlogPost from './Views/BlogPost'
+import Index from './Views/Index';
+import BlogPost from './Views/BlogPost';
+import Blog from './Views/Blog';
 
 function App() {  
   return (
@@ -15,7 +16,8 @@ function App() {
         <Header></Header>
           <Switch>
               <Route exact path='/' component={Index}></Route>
-              <Route path='/best-gift-for-:url_slug' component={BlogPost}></Route>
+              <Route path='/best-gifts-for-:url_slug' component={BlogPost}></Route>
+              <Route path='/blog' component={Blog}></Route>
           </Switch>
       </Router>  
     </div>

@@ -23,6 +23,11 @@ export default {
       type: 'blockContent',
     },
     {
+      name: 'Tags',
+      title: 'Tags',
+      type: 'tags'
+    },
+    {
       name: 'Image',
       title: 'Image',
       type: 'image'

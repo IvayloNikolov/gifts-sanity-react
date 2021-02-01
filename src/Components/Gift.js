@@ -1,27 +1,38 @@
 import React from 'react';
-import sanityClient from '../client.js';    
+import BlockContent from "@sanity/block-content-to-react"
+
+const serializers = {
+    types: {
+      code: props => (
+        <span>
+          {props.node.code}
+        </span>
+      )
+    }
+  }
 
 function Gift(props){
- return (
-     <div class = {`gift ${props.classList}`} >
+    
+    return (
+     <div className = {`gift ${props.classList}`} >
         <img src={props.imageUrl} alt="grow"/>
-        <div class="floated-text">
-            <div class="gift-title">
+        <div className="floated-text">
+            <div className="gift-title">
                 {props.name}
-            </div>
-            <div class="gift-price">
+            </div>  
+            <div className="gift-price">
                 $ {props.price}
             </div>
-            <hr className="w-40 mr-5 bg-black mt-0 pt-0 mb-0"/>
-            <p class="description">
-                {props.description}
-            </p>
+            <hr className="w-40 mr-5 bg-black mt-0 pt-0 mb-0" />
+            <div className="description">
+                <BlockContent blocks={props.description} serializers={serializers} className="description"></BlockContent>    
+            </div>
             <button> 
                 $ {props.price} at {props.at}
             </button>
-            <div class="clear"></div>
+            <div className="clear"></div>
         </div>
-        <hr class="dotted intro" />
+        <hr className="dotted intro" />
      </div>)
 }
 

@@ -1,5 +1,4 @@
-body{
-         
+body{    
     background-size:100% auto;
     background-repeat: no-repeat;
     background-color:#fff;
@@ -9,7 +8,6 @@ body{
 }
 h1{
     font-size:35px;
-    text-align:center;
     font-weight:300;
 }
 #wrap{
@@ -31,9 +29,7 @@ hr.intro{
     margin-top:10px;
 }
 .subtitle{
-    margin-top: 50px;
     font-size:14px;
-    width:400px;
     margin: 0 auto;
     margin-top: 20px;
     color: #A3ABB7;
@@ -43,7 +39,7 @@ article{
 }
 
 img#header{
-    margin-top: 50px;
+    margin-top: 20px;
 }
 .credit{
     font-size: 12px;
@@ -139,17 +135,21 @@ button{
     border: 1px solid #000;
     position: absolute;
     bottom: 0px;
-    transform: translateX(50%);
+    left: 50%;
+    padding: 5px 10px;
+    transform: translateX(-50%);
     background-color: #fff;
 }
 .book-now-hover{
     text-align:center;
     color: #fff;
     box-shadow: red 3px 5px 0px 0px;
+    padding: 5px 10px;
     border: 1px solid red;
     position: absolute;
+    left: 50%;
     bottom: 0px;
-    transform: translateX(50%);
+    transform: translateX(-50%);
     background-color: #000;
 }
 .gift.absolute{

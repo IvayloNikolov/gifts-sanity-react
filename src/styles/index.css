@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.index{
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 0 auto;
+    padding-top: 50px;
+    height: 100vh;
+    background-image: url('../images/background.png');
+    background-size:100% auto;
+    background-attachment: fixed;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+input[type=text]{
+    border: 1px solid #FE5E72;
+    padding: 10px 20px;
+    width:400px;
+    margin-top: 20px;
+}
+.hobbies-input{
+    display:inline-block;
+    position:relative;
+}
+.hobbies-input:after{
+    content: "\f002";
+    font-family: 'Font Awesome 5 Free';
+    font-weight:900;
+    position:absolute;
+    right: 20px;
+    top: 30px;
+    color: #FE5E72;
+    display: block;
+}
+.gift-by-hobby{
+    flex-basis: 250px;
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+.gift-by-hobby:not(:last-child){
+    margin-right:20px;
+}
+.gift-by-hobby .gift-name{
+    padding: 0 10px;
+    margin-top:5px;
+}
+.index-gift-price{
+    padding: 0 10px;
+    text-decoration: line-through;
+    font-size: 12px;
+    color: rgb(75, 75, 75);
+}
+.index-sale-price{
+    color: #FE5E72;
+    font-size: 12px;
+}
+.prices{
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+    .gift-by-hobby{
+        flex-basis: 400px;
+        
+    }
+    
+}

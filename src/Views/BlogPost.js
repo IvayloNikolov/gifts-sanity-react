@@ -5,11 +5,10 @@ import "../styles/blog.css";
 function BlogPost(props){
   let url_slug = props.match.params.url_slug;
     
-  console.log(url_slug)
      return <div id="wrap">
-        <hr class="intro"/>
+        <hr className="intro" />
         <div className="relative">
-            <GiftCollection name={url_slug} />
+            <GiftCollection slug={url_slug} />
         </div>
     </div>
 }
