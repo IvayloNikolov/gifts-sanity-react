@@ -11,7 +11,7 @@ import Blog from './Views/Blog';
 
 function App() {  
   return (
-    <div>
+    <>
       <Router>
         <Header></Header>
           <Switch>
@@ -20,7 +20,7 @@ function App() {
               <Route path='/blog' component={Blog}></Route>
           </Switch>
       </Router>  
-    </div>
+    </>
   );
 }
 

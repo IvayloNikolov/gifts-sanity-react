@@ -15,9 +15,8 @@ function readMore(input){
 
 const serializers = {
     types: {block: props=>{
-        console.log(props);
         return <>
-            <div class="px-6 pb-4 mt-1 text-s">
+            <div className="px-6 pb-4 mt-1 text-s">
                 {readMore(props.children[0])}
                 <span className="text-red-500"> Read more &gt;</span> 
             </div>
@@ -40,16 +39,12 @@ function RecentPosts(){
         client.fetch(`*[_type=="post"]`, {}).then((posts)=>{
             
             let tempPosts = posts.map((post)=>{
-                console.log(<BlockContent 
-                    blocks={post.Introduction} 
-                    serializers={serializers} 
-                    className="posts"></BlockContent>)
                 return (
                 <div key={post.slug.current}
                     className="post">
                     <Link to = {`${post.slug.current}`}>
                         <img src={urlFor(post.Image)} alt = "art"/>
-                        <div className="author">Ivaylo Nikolov</div>
+                        <div className="author">Author: Ivaylo Nikolov</div>
                         <BlockContent 
                             blocks={post.Introduction} 
                             serializers={serializers}

@@ -1,6 +1,5 @@
 import React from 'react';
 import "../styles/blogs.css";
-import Helmet from 'react-helmet'
 import AllPosts from '../Components/AllPosts.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
@@ -8,9 +7,15 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 function Blog(){
      return (<div className="blog-wrap">
                 <section id="header">
-                    <h1 className="our-blogs">Our Blogs</h1>
-                    <p className="blogs-description">Laborum aliquip proident irure adipisicing ullamco quis aute deserunt sunt ad incididunt eiusmod qui exercitation. Veniam aliquip consectetur labore Lorem adipisicing adipisicing commodo voluptate eu fugiat nostrud laboris. Do laboris do laborum commodo in irure ad consequat amet. Qui reprehenderit elit ea amet.</p>
-                    <button>Read more</button>
+                    <h1 className="our-blogs">Our Blog Articles</h1>
+                    <p className="blogs-description">
+                        We've carefully written down some articles with the perfect gift for different kind of people after days of deep research. We hope we could help you find what you were looking for but didnt know it yet.  We work with the most trusted brands like Amazon, Etsy, Displated so we can be sur that our customers are satisfied with what they purchased.
+                    </p>
+                    <small className="text-xs">
+                        *We may or may not get a small commission fee from what you purchased from this website.
+                    </small>
+                    <div></div>
+                    <a href="#posts" className="button relative top-10">Read more</a>
                     <div className="text-center pt-40">
                         <div>
                             <FontAwesomeIcon icon={faChevronDown} className="text-red-200"></FontAwesomeIcon>

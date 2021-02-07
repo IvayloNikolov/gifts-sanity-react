@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import client from '../client';
 import '../styles/index.css'
 import imageUrlBuilder from '@sanity/image-url';
@@ -13,7 +13,7 @@ function urlFor(source) {
 function addHobbiesInput(setInputValue,setGiftsByHobby,e){
     setInputValue(e.target.value)
     let writtenSymbol = e.nativeEvent.data;
-    if(writtenSymbol==" "){
+    if(writtenSymbol===" "){
         client.fetch(`*[_type=="post" && Tags[].value == "Gamers"]{"gifts": *[_type == "gift" && references(^._id)][0...3]}[0]`)
             .then((post)=>{ 
                 let gifts = post.gifts;

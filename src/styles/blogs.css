@@ -28,10 +28,10 @@ section#header{
     font-size: 14px;
     color: #A3ABB7;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
-#header button{
+#header .button{
     background-color: #FE5E72;
     box-shadow: none;
     outline: none;

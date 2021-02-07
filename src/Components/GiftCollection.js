@@ -23,10 +23,11 @@ function urlFor(source) {
 }
 
 function GiftCollection(props){
-    let slug = props.slug; 
+    
     const [gifts, setGifts] = useState(null); 
     const [post, setPost] = useState(null)
     useEffect(()=>{
+        let slug = props.slug; 
         client.fetch(`*[_type=="gift" && GiftPost->slug.current=="best-gifts-for-${slug}"]`,{})
         .then((gifts) =>{
             setGifts(gifts.map((gift)=>{
@@ -46,7 +47,7 @@ function GiftCollection(props){
         client.fetch(`*[_type=="post" && slug.current=="best-gifts-for-${slug}"]`, {}).then((post)=>{
             setPost(
             <> 
-                <h1>8 Gifts for {props.slug}</h1>
+                <h1>8 Gifts for {slug}</h1>
                 <img id="header" src={urlFor(post[0].Image)} width="100%" alt="design"/>
                 <div className="subtitle">
                     <BlockContent blocks={post[0].Introduction} serializers={serializers} className="description"></BlockContent>    
@@ -55,7 +56,7 @@ function GiftCollection(props){
                 
             </>)
         })
-    },[])
+    })
     return <article >
         {post}
         <RandomGift classList="absolute"
