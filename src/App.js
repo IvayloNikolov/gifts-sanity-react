@@ -8,6 +8,7 @@ import {
 import Index from './Views/Index';
 import BlogPost from './Views/BlogPost';
 import Blog from './Views/Blog';
+import Helmet from 'react-helmet';
 
 function App() {  
   return (
@@ -15,9 +16,9 @@ function App() {
       <Router>
         <Header></Header>
           <Switch>
-              <Route exact path='/' component={Index}></Route>
+              <Route exact path='/' component={Blog}></Route>
               <Route path='/best-gifts-for-:url_slug' component={BlogPost}></Route>
-              <Route path='/blog' component={Blog}></Route>
+              <Route path='/search' component={Index}></Route>
           </Switch>
       </Router>  
     </>

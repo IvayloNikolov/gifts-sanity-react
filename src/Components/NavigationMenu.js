@@ -10,7 +10,7 @@ function NavigationMenu(props){
                 <Link to="/">Home</Link>
             </li>
             <li  className='pr-3 menu-item'>
-                <Link to="/blog">Blog</Link>
+                <Link to="/search">Search</Link>
             </li>
         </ul>
     )

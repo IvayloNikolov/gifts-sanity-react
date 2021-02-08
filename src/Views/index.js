@@ -10,11 +10,11 @@ function urlFor(source) {
 }
 
 
-function addHobbiesInput(setInputValue,setGiftsByHobby,e){
+function addHobbiesInput(inputValue,setInputValue,setGiftsByHobby,e){
     setInputValue(e.target.value)
     let writtenSymbol = e.nativeEvent.data;
     if(writtenSymbol===" "){
-        client.fetch(`*[_type=="post" && Tags[].value == "Gamers"]{"gifts": *[_type == "gift" && references(^._id)][0...3]}[0]`)
+        client.fetch(`*[_type=="post" && Tags[].value == "${inputValue}"]{"gifts": *[_type == "gift" && references(^._id)][0...3]}[0]`)
             .then((post)=>{ 
                 let gifts = post.gifts;
                 let giftsDiv = gifts.map(gift=>{
@@ -59,7 +59,7 @@ function Index(){
         <h1> Pick The Best Gift</h1>
         <div className="hobbies-input">
             <input type="text" value = {inputValue} placeholder="Enter your hobbies..." onChange={(e)=>{
-                addHobbiesInput(setInputValue,setGiftsByHobby,e)
+                addHobbiesInput(inputValue,setInputValue,setGiftsByHobby,e)
             }} />
         </div>
         <div className="flex flex-wrap mt-4">
