@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../styles/header.css';
 import '../styles/all.css';
 
@@ -7,10 +7,10 @@ function NavigationMenu(props){
     return (
         <ul className="flex">
             <li className='pr-3 menu-item'>
-                <Link to="/">Home</Link>
+                <NavLink  to="/">Home</NavLink>
             </li>
             <li  className='pr-3 menu-item'>
-                <Link to="/search">Search</Link>
+                <NavLink to="/search">Search</NavLink>
             </li>
         </ul>
     )

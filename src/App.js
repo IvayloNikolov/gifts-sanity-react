@@ -14,7 +14,6 @@ function App() {
   return (
     <>
       <Router>
-        <Header></Header>
           <Switch>
               <Route exact path='/' component={Blog}></Route>
               <Route path='/best-gifts-for-:url_slug' component={BlogPost}></Route>
