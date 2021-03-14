@@ -188,6 +188,9 @@ img.round{
 #intro{
     position:relative;
 }
+#gift-header{
+    padding-top: 50px;
+}
 .gift.absolute .gift-price{
     padding: 5px 10px;
     border: 1px solid #000;

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import "../styles/blogs.css";
 import AllPosts from '../Components/AllPosts.js';
 import HeaderIndex from '../Components/HeaderIndex';
-import { ReactComponent as GiftSvg} from '../images/g10.svg';
+import {ReactComponent as GiftSvg} from '../images/g10.svg';
 import anime from 'animejs/lib/anime.es.js';
-function Blog(){
+function blog(){
     React.useEffect(()=>{
         shakeGift();
     })
@@ -53,4 +53,4 @@ function Blog(){
   }
 }
 
-export default Blog;
+export default blog;

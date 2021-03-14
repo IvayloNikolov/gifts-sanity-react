@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import client from '../client'
 import imageUrlBuilder from '@sanity/image-url'
 import BlockContent from "@sanity/block-content-to-react"
-import { Link } from 'react-router-dom';
+import { Link } from 'gatsby';
 
 function readMore(input){
     if(input.length<250){
@@ -37,23 +37,22 @@ function RecentPosts(){
     
     useEffect(()=>{
         client.fetch(`*[_type=="post"]`, {}).then((posts)=>{
-            
-            let tempPosts = posts.map((post)=>{
-                return (
+            setPostsDiv(posts.map((post)=>{
+                return <>
                 <div key={post.slug.current}
                     className="post">
                     <Link to = {`${post.slug.current}`}>
-                        <img src={urlFor(post.Image)} alt = "art"/>
+                        <img src={urlFor(post.Image).height(500)} alt = "art"/>
                         <div className="author">Author: Ivaylo Nikolov</div>
                         <BlockContent 
                             blocks={post.Introduction} 
                             serializers={serializers}
-                            className="posts"></BlockContent>    
+                            className="posts">
+                        </BlockContent>    
                     </Link>
                 </div>                    
-                )
-            })
-            setPostsDiv(tempPosts)
+                </>
+            }))
         })
     }, [])
     return <div className="recent-posts mb-20">{postsDiv}</div>
