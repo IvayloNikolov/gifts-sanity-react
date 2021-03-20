@@ -3,7 +3,7 @@ import GiftCollection from '../Components/GiftCollection'
 import "../styles/blogPost.css";
 import HeaderBlog from '../Components/HeaderBlog'
 
-function Blog(context){
+function blog(context){
 	let passedData = context.pageContext;
     return <>
         <HeaderBlog />
@@ -16,4 +16,4 @@ function Blog(context){
     </>
 }
 
-export default Blog;
+export default blog;

@@ -6,7 +6,7 @@ import GiftSvg from '../svg/gift-box.inline.svg';
 import anime from 'animejs/lib/anime.es.js';
 import Navigation from '../Components/Navigation';
 
-function Index(){
+function index(){
     React.useEffect(()=>{
         shakeGift();
     })
@@ -63,4 +63,4 @@ function Index(){
   }
 }
 
-export default Index;
+export default index;

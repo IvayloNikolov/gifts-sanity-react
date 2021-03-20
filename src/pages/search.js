@@ -52,7 +52,7 @@ function addHobbiesInput(inputValue,setInputValue,setGiftsByHobby,e){
     };
 }
 
-function Search(){
+function search(){
     let [inputValue, setInputValue] = useState('');
     let [giftsByHobby, setGiftsByHobby] = useState(null);
     return (<div className="index">
@@ -68,4 +68,4 @@ function Search(){
     </div>)
 }
 
-export default Search;
+export default search;

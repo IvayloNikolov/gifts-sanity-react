@@ -3,7 +3,6 @@ module.exports = {
     title: `Gatsby`,
   },
   plugins: [
-    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-source-sanity',
       options:{
