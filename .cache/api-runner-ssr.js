@@ -1,4 +1,8 @@
-var plugins = []
+var plugins = [{
+      name: 'gatsby-source-sanity',
+      plugin: require('/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/gatsby-source-sanity/gatsby-ssr'),
+      options: {"plugins":[],"projectId":"n1gslz9a","dataset":"production"},
+    }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
 //   {

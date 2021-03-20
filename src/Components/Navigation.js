@@ -1,12 +1,17 @@
 import React from 'react';
-import NavigationMenu from './NavigationMenu'
+import { Link } from 'gatsby';
 
 function Navigation(){
     return  (
         <nav id="menu">
-            <NavigationMenu >
-                
-            </NavigationMenu>
+            <ul className="flex">
+                <li className='pr-3 menu-item'>
+                    <Link  to="/">Home</Link>
+                </li>
+                <li  className='pr-3 menu-item'>
+                    <Link to="/search">Search</Link>
+                </li>   
+            </ul>
         </nav>
     )
 }

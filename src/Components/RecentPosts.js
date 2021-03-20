@@ -16,7 +16,7 @@ function readMore(input){
 const serializers = {
     types: {block: props=>{
         return <>
-            <div className="px-6 pb-4 mt-1 text-s">
+            <div className="px-6 pb-4 mt-2 text-s">
                 {readMore(props.children[0])}
                 <span className="text-red-500"> Read more &gt;</span> 
             </div>
@@ -41,8 +41,8 @@ function RecentPosts(){
                 return <>
                 <div key={post.slug.current}
                     className="post">
-                    <Link to = {`${post.slug.current}`}>
-                        <img src={urlFor(post.Image).height(500)} alt = "art"/>
+                    <Link to = {`/blog/${post.slug.current}`}>
+                        <img src={urlFor(post.Image).height(230)} alt = "art"/>
                         <div className="author">Author: Ivaylo Nikolov</div>
                         <BlockContent 
                             blocks={post.Introduction} 

@@ -7,7 +7,15 @@
   \**********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var plugins = []; // During bootstrap, we write requires at top of this file which looks like:
+var plugins = [{
+  name: 'gatsby-source-sanity',
+  plugin: __webpack_require__(/*! ./node_modules/gatsby-source-sanity/gatsby-ssr */ "./node_modules/gatsby-source-sanity/gatsby-ssr.js"),
+  options: {
+    "plugins": [],
+    "projectId": "n1gslz9a",
+    "dataset": "production"
+  }
+}]; // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
 //   {
 //     plugin: require("/path/to/plugin1/gatsby-ssr.js"),
@@ -323,6 +331,51 @@ HTML.propTypes = {
   body: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
   postBodyComponents: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().array)
 };
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-source-sanity/gatsby-ssr.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/gatsby-source-sanity/gatsby-ssr.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+// Proxy to TypeScript-compiled output.
+// Note that unlike gatsby-node.js, we need to explicitly define the exported hooks
+// as they seem to be statically analyzed at build time.
+const ssr = __webpack_require__(/*! ./lib/gatsby-ssr */ "./node_modules/gatsby-source-sanity/lib/gatsby-ssr.js");
+
+exports.onRenderBody = ssr.onRenderBody;
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-source-sanity/lib/gatsby-ssr.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/gatsby-source-sanity/lib/gatsby-ssr.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.onRenderBody = void 0;
+
+const react_1 = __webpack_require__(/*! react */ "react");
+
+const onRenderBody = ({
+  setHeadComponents
+}) => {
+  setHeadComponents([react_1.createElement('link', {
+    rel: 'preconnect',
+    key: 'sanity-cdn-preconnect',
+    href: 'https://cdn.sanity.io'
+  })]);
+};
+
+exports.onRenderBody = onRenderBody;
 
 /***/ }),
 

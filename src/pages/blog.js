@@ -1,56 +1,19 @@
-import React, {Component} from 'react';
-import "../styles/blogs.css";
-import AllPosts from '../Components/AllPosts.js';
-import HeaderIndex from '../Components/HeaderIndex';
-import {ReactComponent as GiftSvg} from '../images/g10.svg';
-import anime from 'animejs/lib/anime.es.js';
-function blog(){
-    React.useEffect(()=>{
-        shakeGift();
-    })
-    
-     return <>
-            <section id="gift-header" className="pt-20">
-                <HeaderIndex></HeaderIndex>
-                <GiftSvg style={{margin: '0 auto'}} />
-                <h1>The <em>best</em> gift you can pick <br />
-                is waiting <em>for you</em> </h1>
-            </section>
-            <AllPosts></AllPosts>
-        </>
+import React from 'react';
+import GiftCollection from '../Components/GiftCollection'
+import "../styles/blogPost.css";
+import HeaderBlog from '../Components/HeaderBlog'
 
-  function shakeGift() {
-    const xMax = 16;
-    anime({
-      targets: [document.querySelectorAll('.hat')],
-      easing: 'easeInOutSine',
-      duration: 550,
-      translateX: [
-        {
-          value: xMax * -1,
-        },
-        {
-          value: xMax,
-        },
-        {
-          value: xMax / -2,
-        },
-        {
-          value: xMax / 2,
-        },
-        {
-          value: 0,
-        }
-      ],
-      autoplay: true,
-      complete: (anim) => {
-        setTimeout(() => {
-          anim.restart();
-        }, 5000);
-
-      }
-    });
-  }
+function Blog(context){
+	let passedData = context.pageContext;
+    return <>
+        <HeaderBlog />
+        <div id="wrap">
+            <hr className="intro" />
+            <div className="relative">
+                <GiftCollection data={passedData} />
+            </div>
+        </div>
+    </>
 }
 
-export default blog;
+export default Blog;
