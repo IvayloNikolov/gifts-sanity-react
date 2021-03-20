@@ -64,7 +64,7 @@ exports.createPages = async ({graphql, actions}) =>{
         let gifts = resultGifts.data.allSanityGift.edges;
         createPage({
             path: "/blog/" + page.slug.current,
-            component: path.resolve("src/pages/Blog.js"),
+            component: path.resolve("src/pages/blog.js"),
             context: {
 				page: page,
 				gifts : gifts
