@@ -1,6 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby`,
+    title: `Pick the best gift possible`,
+    titleTemplate: "%s · test",
+    description:
+      "Pick the best gift possible for your friends.",
+    url: "https://www.doe.com", // No trailing slash allowed!
+    image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@occlumency",
   },
   plugins: [
     {

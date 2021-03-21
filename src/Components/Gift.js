@@ -12,7 +12,6 @@ const serializers = {
   }
 
 function Gift(props){
-    
     return (
      <div className = {`gift ${props.classList}`} >
         <img src={props.imageUrl} alt="grow"/>
@@ -27,9 +26,9 @@ function Gift(props){
             <div className="description">
                 <BlockContent blocks={props.description} serializers={serializers} className="description"></BlockContent>    
             </div>
-            <button> 
+            <a href={props.link} className="shop-link"> 
                 $ {props.price} at {props.at}
-            </button>
+            </a>
             <div className="clear"></div>
         </div>
         <hr className="dotted intro" />

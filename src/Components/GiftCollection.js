@@ -58,6 +58,7 @@ function GiftCollection(props){
 			<Gift
 				key={giftBackend.node.Name}
 				classList="floated"
+				link={giftBackend.node.Link}
 				name={giftBackend.node.Name}
 				price={giftBackend.node.Price}
 				description={giftBackend.node._rawDescription}

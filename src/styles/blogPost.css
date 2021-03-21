@@ -25,6 +25,7 @@ hr.intro{
 }
 .description{
     margin-top:10px;
+    margin-bottom: 20px;
 }
 .subtitle{
     font-size:14px;
@@ -198,6 +199,20 @@ img.round{
     left: 60px;
     background-color: #fff;
     box-shadow: #000 3px 5px 0px 0px;    
+}
+.shop-link{
+    text-align: center;
+    box-shadow: #000 3px 5px 0px 0px;
+    border: 1px solid #000;
+    padding: 5px 10px;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+.shop-link:hover{
+    background-color: #000;
+    color: #fff;
+    box-shadow: red 3px 5px 0px 0px;
 }
 
 .gift.absolute .gift-title{

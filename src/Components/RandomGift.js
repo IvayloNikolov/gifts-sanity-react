@@ -16,7 +16,6 @@ function RandomGift(props){
     useEffect(()=>{
         client.fetch('*[_type=="gift"]', {}).then((gifts)=>{
             setRandomGift(gifts[Math.floor(7 * Math.random((gifts.length)))]);
-            console.log(gifts[0]);
         })
     }, [])
     if(onHover){

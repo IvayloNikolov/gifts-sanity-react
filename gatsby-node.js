@@ -37,10 +37,11 @@ exports.createPages = async ({graphql, actions}) =>{
     }
     let pages = pagesGraph.data.allSanityPost.nodes;
     for(page of pages){
+		console.log(page.id);
         let resultGifts = await graphql(`
             query MyQuery {
                 allSanityGift(
-                    filter: {GiftPost: {id: {eq: "-7929a17a-f5d0-5eee-ba7b-3ce08f0e22a1"}}}
+                    filter: {GiftPost: {id: {eq: "${page.id}"}}}
                 ) {
                     edges {
                         node {
@@ -55,6 +56,7 @@ exports.createPages = async ({graphql, actions}) =>{
 									url
                                 }
 							}
+							Link
 							_rawDescription
                         }
                     }
