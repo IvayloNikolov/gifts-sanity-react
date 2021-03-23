@@ -3,8 +3,8 @@ import "../styles/blog.css";
 import "../styles/header.css";
 import AllPosts from '../Components/AllPosts.js';
 import GiftSvg from '../svg/gift-box.inline.svg';
-import anime from 'animejs/lib/anime.es.js';
 import Navigation from '../Components/Navigation';
+import SEO from '../Components/SEO';
 
 function index(){
       return <>            

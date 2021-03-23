@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import client from '../client';
 import '../styles/index.css'
 import imageUrlBuilder from '@sanity/image-url';
+import SEO from '../Components/SEO';
 
 const builder = imageUrlBuilder(client)
  
