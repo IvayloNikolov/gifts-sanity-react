@@ -56,6 +56,7 @@ function search(){
     let [inputValue, setInputValue] = useState('');
     let [giftsByHobby, setGiftsByHobby] = useState(null);
     return (<div className="index">
+        <SEO title="title" image="" description="" />
         <h1> Pick The Best Gift</h1>
         <div className="hobbies-input">
             <input type="text" value = {inputValue} placeholder="Enter your hobbies..." onChange={(e)=>{

@@ -8,6 +8,7 @@ import Navigation from '../Components/Navigation';
 
 function index(){
       return <>            
+      <SEO title="title" image="" description="" />
         <section id="gift-header" className="pt-6">
             <Navigation></Navigation>
             <h1>The <em>best</em> gift you can pick <br />
