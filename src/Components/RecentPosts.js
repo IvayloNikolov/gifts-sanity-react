@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import client from '../client'
 import imageUrlBuilder from '@sanity/image-url'
 import BlockContent from "@sanity/block-content-to-react"
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
 function readMore(input){
     if(input.length<250){
@@ -31,31 +31,52 @@ function urlFor(source) {
     return builder.image(source)
   }
 
-
 function RecentPosts(){
-    const [postsDiv, setPostsDiv] = useState(null);
-    
-    useEffect(()=>{
-        client.fetch(`*[_type=="post"]`, {}).then((posts)=>{
-            setPostsDiv(posts.map((post)=>{
-                return <>
-                <div key={post.slug.current}
-                    className="post">
-                    <Link to = {`/blog/${post.slug.current}`}>
-                        <img src={urlFor(post.Image).height(230)} alt = "art"/>
-                        <div className="author">Author: Ivaylo Nikolov</div>
-                        <BlockContent 
-                            blocks={post.Introduction} 
-                            serializers={serializers}
-                            className="posts">
-                        </BlockContent>    
-                    </Link>
-                </div>                    
-                </>
-            }))
-        })
-    }, [])
-    return <div className="recent-posts mb-20">{postsDiv}</div>
+
+    let query = graphql`query MyQuery {
+        allSanityPost {
+          nodes {
+            id
+            title
+            _rawIntroduction
+            Image {
+              _key
+              _type
+              _rawAsset
+              _rawHotspot
+              _rawCrop
+            }
+            slug {
+              _key
+              current
+              _type
+            }
+            _rawImage
+          }
+        }
+      }
+      `
+    let recentPosts = useStaticQuery(query);
+
+    let recentpostsDiv = recentPosts.allSanityPost.nodes.map((post)=>{
+        console.log(post);
+        return <>
+        <div key={post.slug.current}
+            className="post">
+            <Link to = {`/blog/${post.slug.current}`}>
+                <img src={urlFor(post._rawImage).height(230)} alt = "art"/>
+                <div className="author">Author: Ivaylo Nikolov</div>
+                <BlockContent 
+                    blocks={post._rawIntroduction} 
+                    serializers={serializers}
+                    className="posts">
+                </BlockContent>    
+            </Link>
+        </div>                    
+        </>
+    });
+
+    return <div className="recent-posts mb-20">{recentpostsDiv}</div>
 }
 
 export default RecentPosts;
