@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import client from '../client'
 import imageUrlBuilder from '@sanity/image-url'
 import BlockContent from "@sanity/block-content-to-react"
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery, graphql, StaticQuery } from 'gatsby';
 
 function readMore(input){
     if(input.length<250){
@@ -33,7 +33,7 @@ function urlFor(source) {
 
 function RecentPosts(){
 
-    let query = graphql`query MyQuery {
+    let recentPostsQuery = graphql`query MyQuery {
         allSanityPost {
           nodes {
             id
@@ -55,15 +55,12 @@ function RecentPosts(){
           }
         }
       }
-      `
-    let recentPosts = useStaticQuery(query);
-
-    let recentpostsDiv = recentPosts.allSanityPost.nodes.map((post)=>{
-        console.log(post);
-        return <>
-        <div key={post.slug.current}
-            className="post">
-            <Link to = {`/blog/${post.slug.current}`}>
+      `;
+    return <div className="recent-posts mb-20">
+    <StaticQuery query={recentPostsQuery} render={recentPosts =>{
+        return recentPosts.allSanityPost.nodes.map((post)=>{
+            return <div key={post.slug.current} className="post">
+                <Link to = {`/blog/${post.slug.current}`}>
                 <img src={urlFor(post._rawImage).height(230)} alt = "art"/>
                 <div className="author">Author: Ivaylo Nikolov</div>
                 <BlockContent 
@@ -71,12 +68,11 @@ function RecentPosts(){
                     serializers={serializers}
                     className="posts">
                 </BlockContent>    
-            </Link>
-        </div>                    
-        </>
-    });
-
-    return <div className="recent-posts mb-20">{recentpostsDiv}</div>
+                </Link>
+            </div>                    
+        })
+    }}></StaticQuery>
+    </div>
 }
 
 export default RecentPosts;
