@@ -37,7 +37,6 @@ exports.createPages = async ({graphql, actions}) =>{
     }
     let pages = pagesGraph.data.allSanityPost.nodes;
     for(page of pages){
-		console.log(page.id);
         let resultGifts = await graphql(`
             query MyQuery {
                 allSanityGift(
@@ -66,7 +65,7 @@ exports.createPages = async ({graphql, actions}) =>{
         let gifts = resultGifts.data.allSanityGift.edges;
         createPage({
             path: "/blog/" + page.slug.current,
-            component: path.resolve("src/pages/blog.js"),
+            component: path.resolve("src/templates/blog.js"),
             context: {
 				page: page,
 				gifts : gifts
