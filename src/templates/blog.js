@@ -8,7 +8,6 @@ function blog(context){
     let passedData = context.pageContext;
     
     return <>
-        <div id="linktest">{context.pageContext.gifts.length}</div>
         <SEO title="title" image="" description="" />
         <HeaderBlog />
         <div id="wrap">
