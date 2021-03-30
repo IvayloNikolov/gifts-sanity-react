@@ -6,9 +6,9 @@ import SEO from '../Components/SEO';
 
 function blog(context){
     let passedData = context.pageContext;
-    
+    let title = context.pageContext.page.title;
     return <>
-        <SEO title="title" image="" description="" />
+        <SEO title={`${title} - pickthebes.gifts`} image="" description="" />
         <HeaderBlog />
         <div id="wrap">
             <hr className="intro" />

@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(233, 195, 114)
+}
+h1.oops{
+    color: #fff;
+    font-weight: bold;
+    font-size: 64px;
+    text-align: center;
+    padding:0;
+    margin: 0;
+}
+.homepage-button{
+    color: #fff;
+    background-color: rgb(223, 59, 59);
+    padding: 15px;
+    position: relative;
+    top: 50px;
+    box-shadow: #000 3px 5px 0px 0px; 
+}
+.parent{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.not-found-404{
+    text-align:center;
+    font-weight: bold;
+}
+
+.not-found-description{
+    text-align: center;
+    font-weight: bold;
+}
+.svg-not-found{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
