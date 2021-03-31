@@ -11,6 +11,15 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-5VN7QKW226", // Google Analytics / GA
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://www.pickthebest.gifts',
