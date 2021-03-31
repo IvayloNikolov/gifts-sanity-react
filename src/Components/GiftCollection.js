@@ -53,7 +53,7 @@ function GiftCollection(props){
 					price={giftBackend.node.Price}
 					description={giftBackend.node._rawDescription}
 					at={giftBackend.node.Shop}
-					imageUrl={urlFor(giftBackend.node.Image).width(200)}
+					imageUrl={urlFor(giftBackend.node.Image).width(200).format('webp').url()}
 				>
 				</Gift>
 			</>;
