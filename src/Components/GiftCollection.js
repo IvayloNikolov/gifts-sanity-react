@@ -34,7 +34,7 @@ function GiftCollection(props){
   function getPostCallback(props) {
 	return <>
 			<h1>{props.title}</h1>
-			<img id="header" src={urlFor(props.Image)} width="100%" alt="design" />
+			<img id="header" src={urlFor(props.Image).width(800).format('webp').url()} width="100%" alt="design" />
 			<div className="subtitle">
 				<BlockContent blocks={props._rawIntroduction} serializers={serializers} className="description"></BlockContent>
 			</div>
