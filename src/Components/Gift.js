@@ -26,7 +26,7 @@ function Gift(props){
             <div className="description">
                 <BlockContent blocks={props.description} serializers={serializers} className="description"></BlockContent>    
             </div>
-            <a href={props.link} className="shop-link"> 
+            <a href={props.link} className="shop-link" rel="nofollow"> 
                 $ {props.price} at {props.at}
             </a>
             <div className="clear"></div>

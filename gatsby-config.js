@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Pick the best gift possible`,
+    siteUrl: 'https://www.pickthebest.gifts',
     description:
       "Pick the best gift possible for your friends.",
     url: "https://www.pickthebest.gifts", // No trailing slash allowed!
@@ -8,6 +9,15 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.pickthebest.gifts',
+        sitemap: 'https://www.pickthebest.gifts/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/'}]
+      }
+    },
     {
       resolve: 'gatsby-source-sanity',
       options:{

@@ -3,6 +3,10 @@ var plugins = [{
       plugin: require('/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
+      name: 'gatsby-plugin-sitemap',
+      plugin: require('/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
+      options: {"plugins":[],"output":"/sitemap.xml","createLinkInHead":true},
+    },{
       name: 'gatsby-source-sanity',
       plugin: require('/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/gatsby-source-sanity/gatsby-ssr'),
       options: {"plugins":[],"projectId":"n1gslz9a","dataset":"production"},
