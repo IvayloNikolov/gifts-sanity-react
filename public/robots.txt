@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://www.pickthebest.gifts/sitemap.xml
-Host: https://www.pickthebest.gifts
