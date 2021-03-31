@@ -59,7 +59,6 @@ function RecentPosts(){
     let recentPosts = useStaticQuery(query);
 
     let recentpostsDiv = recentPosts.allSanityPost.nodes.map((post)=>{
-        console.log(post);
         return <>
         <div key={post.slug.current}
             className="post">

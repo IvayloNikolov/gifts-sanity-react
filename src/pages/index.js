@@ -8,7 +8,7 @@ import SEO from '../Components/SEO';
 
 function index(){
       return <>            
-      <SEO title="title" image="" description="" />
+      <SEO title="Pick the best gifts - pickthebest.gifts" image="" description="Picking the perfect present might be a hard task but not with our help. We have awesome articles that can help you with that." />
         <section id="gift-header" className="pt-6">
             <Navigation></Navigation>
             <h1>The <em>best</em> gift you can pick <br />

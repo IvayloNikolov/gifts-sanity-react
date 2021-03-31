@@ -18,6 +18,11 @@ export default {
       },
     },
     {
+      name: 'DescriptionGoogle',
+      title: 'Description Google',
+      type: 'text'
+    },
+    {
       name: 'Introduction',
       title: 'Introduction',
       type: 'blockContent',
