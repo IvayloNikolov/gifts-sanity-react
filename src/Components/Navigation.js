@@ -8,8 +8,8 @@ function Navigation(){
                 <li className='pr-3 menu-item'>
                     <Link  to="/">Home</Link>
                 </li>
-                <li  className='pr-3 menu-item'>
-                    <Link to="/search">Search</Link>
+                <li className='pr-3 menu-item'>
+                    <Link  to="/contacts">Contacts</Link>
                 </li>   
             </ul>
         </nav>

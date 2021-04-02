@@ -1,0 +1,116 @@
+input[type=text]#your-name{
+    width: 100%;
+    height: 30px;
+    padding: 5px 5px;
+    border: 1px solid #000;
+    padding-left: 40px;
+    display:block;
+    margin-top: 5px;
+    
+}
+label#your-name-label{
+    position: relative;
+    display:block;
+}
+label#your-name-label::after{
+    background-image: url('../images/name.svg');
+    content: ' ';
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    position: absolute;
+    left: 15px;
+    top: 33px;
+    margin-top:0;
+}
+input[type=email]#your-email{
+    border: 1px solid #000;
+    width: 100%;
+    height: auto;
+    padding-left: 40px;
+    display:block;
+    height: 30px;   
+    margin-top: 5px;
+}
+#your-message{
+    display:block;
+    width: 100%;
+    border: 1px solid #000;
+    height: 200px;
+    margin-top: 5px;
+}
+label#your-email-label{
+    margin-top: 10px;
+    display: block;
+    position: relative;
+}
+label#your-email-label::after{
+    content: ' ';
+    background-image: url('../images/mail.svg');
+    width: 20px;
+    height: 20px;
+    background-size:cover;
+    position: absolute;
+    top: 33px;
+    left: 15px;
+}
+.contact-us-popup{
+    margin: 0 auto;
+    box-shadow: #000 3px 5px 0px 0px;
+    width: 300px;
+    border: 1px solid #000;
+    background-color: #fff;
+    padding: 20px 30px;
+    position: relative;
+}
+#contact-description{
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+}
+#contact-ways{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; 
+    width: 300px;
+    margin: auto;  
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.contact-way:hover{
+    background-color: #000;
+}
+.contact-way{
+    padding-top: 10px;
+    padding-bottom:10px;
+}
+.contact-way svg{
+    width: 150px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.contact-value{
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.background-contacts{
+    font-family: 'Rubik';
+    background-color: #FE2944;
+    padding-top: 40px;
+}
+.background-contacts h1{
+   margin-top: 50px; 
+   padding: 0;
+}
+#your-message-label{
+    display: block;
+    margin-top: 10px;
+}
+button:hover{
+    background-color: red;
+}
