@@ -26,7 +26,7 @@ function RandomGift(props){
                     Every product is independently selected by (obsessive) editors. Things you buy through our links may earn us a commission.
                 </div>
                 <div className="relative">
-                    <img src={randomGift && urlFor(randomGift.Image)} alt="grow"/>
+                    <img src={randomGift && urlFor(randomGift.Image).format('webp')} alt="grow"/>
                     <div className={priceClasses} 
                         onMouseEnter={()=>{
                             setOnHover(true);
