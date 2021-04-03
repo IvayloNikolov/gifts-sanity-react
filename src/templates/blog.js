@@ -10,6 +10,7 @@ function blog(context){
     let description = context.pageContext.page.DescriptionGoogle;
     return <>
         <SEO title={`${title} - pickthebes.gifts`} image="" description={description} />
+        <link rel="cannonical" href="https://www.pickthebest.gifts/blog/best-gifts-for-movie-lovers/"></link>
         <HeaderBlog />
         <div id="wrap">
             <hr className="intro" />

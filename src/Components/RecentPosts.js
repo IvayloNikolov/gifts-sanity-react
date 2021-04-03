@@ -62,7 +62,7 @@ function RecentPosts(){
         return <>
         <div key={post.slug.current}
             className="post">
-            <Link to = {`/blog/${post.slug.current}`}>
+            <Link to = {`/blog/${post.slug.current}/`}>
                 <img src={urlFor(post._rawImage).height(230).quality(60).format('webp').url()} alt = "art"/>
                 <div className="author">Author: Ivaylo Nikolov</div>
                 <BlockContent 
