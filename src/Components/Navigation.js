@@ -9,7 +9,7 @@ function Navigation(){
                     <Link  to="/">Home</Link>
                 </li>
                 <li className='pr-3 menu-item'>
-                    <Link  to="/contacts">Contacts</Link>
+                    <Link  to="/contacts/">Contacts</Link>
                 </li>   
             </ul>
         </nav>
