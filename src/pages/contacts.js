@@ -5,6 +5,7 @@ import PhoneSVG from '../images/phone.inline.svg'
 import Navigation from '../Components/Navigation'
 function contacts(){
     return <div className="background-contacts">
+        <SEO title="Contact us - pickthebest.gifts" image="" description="You are always welcome to ask us questions or ask for help." />
         <Navigation></Navigation>
         <h1>
             Get in touch
