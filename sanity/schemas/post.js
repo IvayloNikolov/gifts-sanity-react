@@ -18,8 +18,8 @@ export default {
       },
     },
     {
-      name: 'DescriptionGoogle',
-      title: 'Description Google',
+      name: 'DescriptionGoogleText',
+      title: 'Description Google Text',
       type: 'text'
     },
     {
