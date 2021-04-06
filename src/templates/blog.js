@@ -7,7 +7,7 @@ import SEO from '../Components/SEO';
 function blog(context){
     let passedData = context.pageContext;
     let title = context.pageContext.page.title;
-    let description = context.pageContext.page.DescriptionGoogle;
+    let description = context.pageContext.page.DescriptionGoogleText;
     return <>
         <SEO title={`${title} - pickthebes.gifts`} image="" description={description} />
         <link rel="cannonical" href="https://www.pickthebest.gifts/blog/best-gifts-for-movie-lovers/"></link>
