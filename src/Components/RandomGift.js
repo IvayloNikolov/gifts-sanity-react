@@ -30,7 +30,7 @@ function RandomGift(props){
                     <div className={priceClasses} 
                         onMouseEnter={()=>{
                             setOnHover(true);
-                        }}
+                        }} 
                         onMouseLeave={()=>{
                             setOnHover(false)
                         }}>$ {randomGift && randomGift.Price}</div>
