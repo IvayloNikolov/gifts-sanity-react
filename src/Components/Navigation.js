@@ -11,6 +11,9 @@ function Navigation(){
                 <li className='pr-3 menu-item'>
                     <Link  to="/contacts">Contacts</Link>
                 </li>   
+                <li className='pr-3 menu-item'>
+                    <Link  to="/quiz">Quiz</Link>
+                </li>
             </ul>
         </nav>
     )

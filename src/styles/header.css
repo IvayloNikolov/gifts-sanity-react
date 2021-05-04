@@ -17,8 +17,11 @@
 header{
     width:90%;
     margin: 0 auto;
-    padding-top:30px;
+    padding-top:10px;
 }
 #logo{
     font-size: 18px;
+}
+#menu{
+    padding-top:20px;
 }
