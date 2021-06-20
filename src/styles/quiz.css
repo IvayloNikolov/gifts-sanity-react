@@ -1,0 +1,33 @@
+.answer-image{
+    width:250px;
+    height:250px;
+    background-size:cover;
+}
+#question{
+    background-color: #e63946;
+    width:650px;
+    color: #fff;
+    padding: 20px 20px;
+    margin-bottom: 50px;
+}
+.answer{
+    background-color: #f1faee;
+    color: #1d3557; 
+    margin-bottom:50px;
+    padding: 10px 20px;
+    margin-right:10px;
+    display: inline-block;
+}
+#answers{
+    width: 600px;
+}
+.answer-value{
+    text-align: center;
+    margin-top: 5px;
+}
+.question-with-answers{
+    margin-top: 20px;
+    margin: 0 auto;
+    width: 600px;
+    margin-top: 20px;
+}

@@ -1,0 +1,50 @@
+#astrology{
+    background: rgb(29,43,75);
+    background: linear-gradient(180deg, rgba(29,43,75,1) 0%, rgba(25,69,159,1) 100%);
+    width: 100vw;
+    min-height: 100vh;
+}
+#moon{
+    position: absolute;
+    margin: auto;
+    top: 20px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    animation: moon 5s ease-in;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 25px 10px 0px 0px #dfd6c8; 
+}
+.star{
+    box-shadow: 0px 0px 10px 1px rgb(238, 255, 0);
+    width: 3px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    animation: falling 3s infinite;
+}
+
+@keyframes falling{
+    0% {
+        opacity:0;
+        transform: translate(100px, 0);
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity:0;
+        transform: translate(0, 200px)
+        
+    }
+}
+@keyframes moon{
+    0%{
+        box-shadow: 0px 0px 0px 0px #dfd6c8; 
+    }
+    100%{
+        box-shadow: 25px 10px 0px 0px #dfd6c8; 
+    }
+}
