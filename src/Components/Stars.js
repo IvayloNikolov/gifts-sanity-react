@@ -15,7 +15,7 @@ function Stars(){
             let starDOM = <div className="star" style={
                 {
                     position: 'absolute',
-                    top: 100*Math.random() + '%',
+                    top: 80*Math.random() + '%',
                     left: 100*Math.random() + '%',
                     animationDelay: 3*Math.random() + 's'
                 }}></div>

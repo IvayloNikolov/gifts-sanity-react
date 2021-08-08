@@ -1,9 +1,7 @@
-#astrology{
-    background: rgb(29,43,75);
-    background: linear-gradient(180deg, rgba(29,43,75,1) 0%, rgba(25,69,159,1) 100%);
-    width: 100vw;
-    min-height: 100vh;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300&family=Roboto:wght@300&display=swap');
+
 #moon{
     position: absolute;
     margin: auto;
@@ -26,6 +24,59 @@
     animation: falling 3s infinite;
 }
 
+#wheel{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    position:relative;
+    left:calc(50% - 5px);
+    top:250px;
+    animation: rotation 45s infinite;
+}
+#name-of-sign{
+    color: #fff;
+    position: relative;
+    text-align:center;
+    font-family: 'Roboto', serif;
+    font-size: 18px;
+    font-weight: 300;
+    
+}
+#signs{
+    transform-origin: center center;
+}
+#signs svg{
+    cursor: pointer;
+}
+.menu-item a{
+    font-size: 16px;
+}
+.menu-item a:hover{
+    color: yellow !important;
+    text-decoration-color: yellow !important;
+}
+#sign{
+    color: #fff;
+    text-align:center;
+    font-size: 16px;
+    margin-top: 150px;
+}
+@keyframes rotation{
+    0%{
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
+@keyframes antirotation{
+    0%{
+        transform: translate(50%, 50%)  rotateZ(0deg);
+    }
+    100%{
+        transform: translate(50%, 50%) rotateZ(-360deg);
+    }
+}
 @keyframes falling{
     0% {
         opacity:0;
