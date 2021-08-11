@@ -12,13 +12,17 @@ function Stars(){
         let stars = [];
         
         for(let i=0; i<20; i++){
-            let starDOM = <div className="star" style={
+            let starDOM = <div className="star" 
+            style={
                 {
                     position: 'absolute',
                     top: 80*Math.random() + '%',
                     left: 100*Math.random() + '%',
                     animationDelay: 3*Math.random() + 's'
-                }}></div>
+                }
+            } 
+            key = {`star${i}`} >
+            </div>
             stars.push(starDOM);
         }
         return stars;
