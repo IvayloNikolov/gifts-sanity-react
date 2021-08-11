@@ -24,10 +24,12 @@ function Zodiacs(){
 
     const ZodiacComponentsSVG = [Virgo, Aquarius,Aries, Cancer, Capricorn, Gemini, Leo, Libra, Pisces, Sagittarius, Scorpio, Taurus];
     let ZodiacComponents = [];
+    
     ZodiacComponentsSVG.map((ZodiacComponent, index)=>{
         let radius = 0;
         let signSize = 0;
-        if(getWindowDimensions.width < 500){
+        
+        if(getWindowDimensions().width <= 500){
             radius = 125;
             signSize = 15;
         }
