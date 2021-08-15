@@ -11,6 +11,7 @@ import Pisces from '../svg/astrology/pisces.inline.svg';
 import Sagittarius from '../svg/astrology/sagittarius.inline.svg';
 import Scorpio from '../svg/astrology/scorpio.inline.svg';
 import Taurus from '../svg/astrology/taurus.inline.svg';
+import { useMediaQuery } from 'react-responsive';
 
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -24,12 +25,13 @@ function Zodiacs(){
 
     const ZodiacComponentsSVG = [Virgo, Aquarius,Aries, Cancer, Capricorn, Gemini, Leo, Libra, Pisces, Sagittarius, Scorpio, Taurus];
     let ZodiacComponents = [];
-    
+    let mobileScreen = useMediaQuery({query: '(max-width:600px)'})
+    console.log(mobileScreen);
     ZodiacComponentsSVG.map((ZodiacComponent, index)=>{
         let radius = 0;
         let signSize = 0;
         
-        if(getWindowDimensions().width <= 500){
+        if(mobileScreen){
             radius = 125;
             signSize = 15;
         }
