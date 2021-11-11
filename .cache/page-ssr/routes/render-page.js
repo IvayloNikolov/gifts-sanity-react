@@ -6508,7 +6508,7 @@ module.exports = JSON.parse('{"name":"gatsby","description":"Blazing fast modern
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"polyfill":["/polyfill-aa5f20a1707a51eb3a5a.js"],"app":["/app-b1f64b2df5dff4374041.js"],"component---src-pages-404-js":["/component---src-pages-404-js-4655a3ba1c3d8b03545c.js"],"component---src-pages-astrology-js":["/component---src-pages-astrology-js-3e586678a382ee99cda0.js"],"component---src-pages-contacts-js":["/component---src-pages-contacts-js-1b636826b92b13dfdaef.js"],"component---src-pages-index-js":["/component---src-pages-index-js-7ae1acb1278ca4ec7883.js"],"component---src-pages-quiz-js":["/component---src-pages-quiz-js-53552b193cfe86776c61.js"],"component---src-pages-search-js":["/component---src-pages-search-js-800791bc64bcb6810674.js"],"component---src-templates-blog-js":["/component---src-templates-blog-js-8bc1355ba6503a35f16f.js"]}');
+module.exports = JSON.parse('{"polyfill":["/polyfill-aa5f20a1707a51eb3a5a.js"],"app":["/app-b1f64b2df5dff4374041.js"],"component---src-pages-404-js":["/component---src-pages-404-js-4655a3ba1c3d8b03545c.js"],"component---src-pages-astrology-js":["/component---src-pages-astrology-js-c484a5997c425aa0a084.js"],"component---src-pages-contacts-js":["/component---src-pages-contacts-js-2e46845a777c3f382c50.js"],"component---src-pages-index-js":["/component---src-pages-index-js-7ae1acb1278ca4ec7883.js"],"component---src-pages-quiz-js":["/component---src-pages-quiz-js-c5b9b3d5225e9b6fb582.js"],"component---src-pages-search-js":["/component---src-pages-search-js-800791bc64bcb6810674.js"],"component---src-templates-blog-js":["/component---src-templates-blog-js-8bc1355ba6503a35f16f.js"]}');
 
 /***/ })
 
