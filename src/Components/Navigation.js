@@ -12,7 +12,7 @@ function Navigation(){
                     <Link  to="/contacts">Contacts</Link>
                 </li>   
             </ul>
-        </nav>
+        </nav> 
     )
 }
 
