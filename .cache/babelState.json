@@ -7,21 +7,27 @@
           "options": {}
         },
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/gatsby-plugin-image/dist/babel-plugin-parse-static-images.js",
+          "options": {
+            "cacheDir": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/.cache/caches/gatsby-plugin-image"
+          }
+        },
+        {
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
         }
       ],
       "presets": [
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": [],
             "allExtensions": false,
@@ -42,21 +48,27 @@
           "options": {}
         },
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/gatsby-plugin-image/dist/babel-plugin-parse-static-images.js",
+          "options": {
+            "cacheDir": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/.cache/caches/gatsby-plugin-image"
+          }
+        },
+        {
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
         }
       ],
       "presets": [
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": [],
             "allExtensions": false,
@@ -77,21 +89,27 @@
           "options": {}
         },
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/gatsby-plugin-image/dist/babel-plugin-parse-static-images.js",
+          "options": {
+            "cacheDir": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/.cache/caches/gatsby-plugin-image"
+          }
+        },
+        {
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
         }
       ],
       "presets": [
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": [],
             "allExtensions": false,
@@ -112,21 +130,27 @@
           "options": {}
         },
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/gatsby-plugin-image/dist/babel-plugin-parse-static-images.js",
+          "options": {
+            "cacheDir": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/.cache/caches/gatsby-plugin-image"
+          }
+        },
+        {
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
         }
       ],
       "presets": [
         {
-          "name": "/Users/ivaylonikolov/Documents/gifts-react/gifts/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/Users/ivaylonikolov/Desktop/Gifts/gifts-sanity-react/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": [],
             "allExtensions": false,

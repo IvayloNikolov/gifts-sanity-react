@@ -14,8 +14,6 @@ var _reachRouter = require("@gatsbyjs/reach-router");
 
 var _gatsbyReactRouterScroll = require("gatsby-react-router-scroll");
 
-var _domready = _interopRequireDefault(require("@mikaelkristiansson/domready"));
-
 var _gatsby = require("gatsby");
 
 var _navigation = require("./navigation");
@@ -35,7 +33,7 @@ var _stripPrefix = _interopRequireDefault(require("./strip-prefix"));
 var _matchPaths = _interopRequireDefault(require("$virtual/match-paths.json"));
 
 // Generated during bootstrap
-const loader = new _loader.ProdLoader(_asyncRequires.default, _matchPaths.default);
+const loader = new _loader.ProdLoader(_asyncRequires.default, _matchPaths.default, window.pageData);
 (0, _loader.setLoader)(loader);
 loader.setApiRunner(_apiRunnerBrowser.apiRunner);
 window.asyncRequires = _asyncRequires.default;
@@ -45,7 +43,7 @@ window.___loader = _loader.publicLoader;
 (0, _apiRunnerBrowser.apiRunnerAsync)(`onClientEntry`).then(() => {
   // Let plugins register a service worker. The plugin just needs
   // to return true.
-  if ((0, _apiRunnerBrowser.apiRunner)(`registerServiceWorker`).length > 0) {
+  if ((0, _apiRunnerBrowser.apiRunner)(`registerServiceWorker`).filter(Boolean).length > 0) {
     require(`./register-service-worker`);
   } // In gatsby v2 if Router is used in page using matchPaths
   // paths need to contain full path.
@@ -108,7 +106,7 @@ window.___loader = _loader.publicLoader;
         location: location,
         id: "gatsby-focus-wrapper"
       }, /*#__PURE__*/_react.default.createElement(RouteHandler, (0, _extends2.default)({
-        path: pageResources.page.path === `/404.html` ? (0, _stripPrefix.default)(location.pathname, __BASE_PATH__) : encodeURI(pageResources.page.matchPath || pageResources.page.path)
+        path: pageResources.page.path === `/404.html` || pageResources.page.path === `/500.html` ? (0, _stripPrefix.default)(location.pathname, __BASE_PATH__) : encodeURI((pageResources.page.matchPath || pageResources.page.path).split(`?`)[0])
       }, this.props, {
         location: location,
         pageResources: pageResources
@@ -121,20 +119,22 @@ window.___loader = _loader.publicLoader;
     pagePath,
     location: browserLoc
   } = window; // Explicitly call navigate if the canonical path (window.pagePath)
-  // is different to the browser path (window.location.pathname). But
-  // only if NONE of the following conditions hold:
+  // is different to the browser path (window.location.pathname). SSR
+  // page paths might include search params, while SSG and DSG won't.
+  // If page path include search params we also compare query params.
+  // But only if NONE of the following conditions hold:
   //
   // - The url matches a client side route (page.matchPath)
   // - it's a 404 page
   // - it's the offline plugin shell (/offline-plugin-app-shell-fallback/)
 
-  if (pagePath && __BASE_PATH__ + pagePath !== browserLoc.pathname && !(loader.findMatchPath((0, _stripPrefix.default)(browserLoc.pathname, __BASE_PATH__)) || pagePath === `/404.html` || pagePath.match(/^\/404\/?$/) || pagePath.match(/^\/offline-plugin-app-shell-fallback\/?$/))) {
-    (0, _reachRouter.navigate)(__BASE_PATH__ + pagePath + browserLoc.search + browserLoc.hash, {
+  if (pagePath && __BASE_PATH__ + pagePath !== browserLoc.pathname + (pagePath.includes(`?`) ? browserLoc.search : ``) && !(loader.findMatchPath((0, _stripPrefix.default)(browserLoc.pathname, __BASE_PATH__)) || pagePath.match(/^\/(404|500)(\/?|.html)$/) || pagePath.match(/^\/offline-plugin-app-shell-fallback\/?$/))) {
+    (0, _reachRouter.navigate)(__BASE_PATH__ + pagePath + browserLoc.hash, {
       replace: true
     });
   }
 
-  _loader.publicLoader.loadPage(browserLoc.pathname).then(page => {
+  _loader.publicLoader.loadPage(browserLoc.pathname + browserLoc.search).then(page => {
     if (!page || page.status === _loader.PageResourceStatus.Error) {
       const message = `page resources for ${browserLoc.pathname} not found. Not rendering React`; // if the chunk throws an error we want to capture the real error
       // This should help with https://github.com/gatsbyjs/gatsby/issues/19618
@@ -158,13 +158,53 @@ window.___loader = _loader.publicLoader;
       };
     }).pop();
 
-    const App = () => /*#__PURE__*/_react.default.createElement(GatsbyRoot, null, SiteRoot);
+    const App = function App() {
+      const onClientEntryRanRef = _react.default.useRef(false);
 
-    const renderer = (0, _apiRunnerBrowser.apiRunner)(`replaceHydrateFunction`, undefined, _reactDom.default.hydrate)[0];
-    (0, _domready.default)(() => {
-      renderer( /*#__PURE__*/_react.default.createElement(App, null), typeof window !== `undefined` ? document.getElementById(`___gatsby`) : void 0, () => {
-        (0, _apiRunnerBrowser.apiRunner)(`onInitialClientRender`);
-      });
-    });
+      _react.default.useEffect(() => {
+        if (!onClientEntryRanRef.current) {
+          onClientEntryRanRef.current = true;
+
+          if (performance.mark) {
+            performance.mark(`onInitialClientRender`);
+          }
+
+          (0, _apiRunnerBrowser.apiRunner)(`onInitialClientRender`);
+        }
+      }, []);
+
+      return /*#__PURE__*/_react.default.createElement(GatsbyRoot, null, SiteRoot);
+    };
+
+    const renderer = (0, _apiRunnerBrowser.apiRunner)(`replaceHydrateFunction`, undefined, _reactDom.default.hydrateRoot ? _reactDom.default.hydrateRoot : _reactDom.default.hydrate)[0];
+
+    function runRender() {
+      const rootElement = typeof window !== `undefined` ? document.getElementById(`___gatsby`) : null;
+
+      if (renderer === _reactDom.default.hydrateRoot) {
+        renderer(rootElement, /*#__PURE__*/_react.default.createElement(App, null));
+      } else {
+        renderer( /*#__PURE__*/_react.default.createElement(App, null), rootElement);
+      }
+    } // https://github.com/madrobby/zepto/blob/b5ed8d607f67724788ec9ff492be297f64d47dfc/src/zepto.js#L439-L450
+    // TODO remove IE 10 support
+
+
+    const doc = document;
+
+    if (doc.readyState === `complete` || doc.readyState !== `loading` && !doc.documentElement.doScroll) {
+      setTimeout(function () {
+        runRender();
+      }, 0);
+    } else {
+      const handler = function () {
+        doc.removeEventListener(`DOMContentLoaded`, handler, false);
+        window.removeEventListener(`load`, handler, false);
+        runRender();
+      };
+
+      doc.addEventListener(`DOMContentLoaded`, handler, false);
+      window.addEventListener(`load`, handler, false);
+    }
   });
 });

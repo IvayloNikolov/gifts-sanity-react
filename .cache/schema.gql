@@ -1,0 +1,376 @@
+### Type definitions saved at 2021-11-03T02:48:58.730Z ###
+
+type File implements Node @dontInfer {
+  sourceInstanceName: String!
+  absolutePath: String!
+  relativePath: String!
+  extension: String!
+  size: Int!
+  prettySize: String!
+  modifiedTime: Date! @dateformat
+  accessTime: Date! @dateformat
+  changeTime: Date! @dateformat
+  birthTime: Date! @dateformat
+  root: String!
+  dir: String!
+  base: String!
+  ext: String!
+  name: String!
+  relativeDirectory: String!
+  dev: Int!
+  mode: Int!
+  nlink: Int!
+  uid: Int!
+  gid: Int!
+  rdev: Int!
+  ino: Float!
+  atimeMs: Float!
+  mtimeMs: Float!
+  ctimeMs: Float!
+  atime: Date! @dateformat
+  mtime: Date! @dateformat
+  ctime: Date! @dateformat
+  birthtime: Date @deprecated(reason: "Use `birthTime` instead")
+  birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
+}
+
+type Directory implements Node @dontInfer {
+  sourceInstanceName: String!
+  absolutePath: String!
+  relativePath: String!
+  extension: String!
+  size: Int!
+  prettySize: String!
+  modifiedTime: Date! @dateformat
+  accessTime: Date! @dateformat
+  changeTime: Date! @dateformat
+  birthTime: Date! @dateformat
+  root: String!
+  dir: String!
+  base: String!
+  ext: String!
+  name: String!
+  relativeDirectory: String!
+  dev: Int!
+  mode: Int!
+  nlink: Int!
+  uid: Int!
+  gid: Int!
+  rdev: Int!
+  ino: Float!
+  atimeMs: Float!
+  mtimeMs: Float!
+  ctimeMs: Float!
+  atime: Date! @dateformat
+  mtime: Date! @dateformat
+  ctime: Date! @dateformat
+  birthtime: Date @deprecated(reason: "Use `birthTime` instead")
+  birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
+}
+
+type Site implements Node @dontInfer {
+  buildTime: Date @dateformat
+  siteMetadata: SiteSiteMetadata
+  polyfill: Boolean
+  pathPrefix: String
+  jsxRuntime: String
+}
+
+type SiteSiteMetadata {
+  title: String
+  description: String
+  siteUrl: String
+  url: String
+  image: String
+}
+
+type SiteFunction implements Node @dontInfer {
+  functionRoute: String!
+  pluginName: String!
+  originalAbsoluteFilePath: String!
+  originalRelativeFilePath: String!
+  relativeCompiledFilePath: String!
+  absoluteCompiledFilePath: String!
+  matchPath: String
+}
+
+type SitePage implements Node @dontInfer {
+  path: String!
+  component: String!
+  internalComponentName: String!
+  componentChunkName: String!
+  matchPath: String
+  pageContext: JSON @proxy(from: "context", fromNode: false)
+  pluginCreator: SitePlugin @link(by: "id", from: "pluginCreatorId")
+}
+
+type SitePlugin implements Node @dontInfer {
+  resolve: String
+  name: String
+  version: String
+  nodeAPIs: [String]
+  browserAPIs: [String]
+  ssrAPIs: [String]
+  pluginFilepath: String
+  pluginOptions: JSON
+  packageJson: JSON
+}
+
+type SiteBuildMetadata implements Node @dontInfer {
+  buildTime: Date @dateformat
+}
+
+enum GatsbyImageFormat {
+  NO_CHANGE
+  AUTO
+  JPG
+  PNG
+  WEBP
+  AVIF
+}
+
+enum GatsbyImageLayout {
+  FIXED
+  FULL_WIDTH
+  CONSTRAINED
+}
+
+enum GatsbyImagePlaceholder {
+  DOMINANT_COLOR
+  TRACED_SVG
+  BLURRED
+  NONE
+}
+
+type SanityBlock {
+  _key: String
+  _type: String
+  children: [SanitySpan]
+  style: String
+  list: String
+  _rawChildren(resolveReferences: SanityResolveReferencesConfiguration): JSON
+}
+
+union SanityBlockOrImage = SanityBlock | SanityImage
+
+"""A Sanity document"""
+interface SanityDocument {
+  _id: String
+  _type: String
+  _createdAt: Date @dateformat
+  _updatedAt: Date @dateformat
+  _rev: String
+}
+
+type SanityFile {
+  _key: String
+  _type: String
+  asset: SanityFileAsset
+  _rawAsset(resolveReferences: SanityResolveReferencesConfiguration): JSON
+}
+
+type SanityGeopoint {
+  _key: String
+  _type: String
+  lat: Float
+  lng: Float
+  alt: Float
+}
+
+type SanityGift implements SanityDocument & Node @dontInfer {
+  _id: String
+  _type: String
+  _createdAt: Date @dateformat
+  _updatedAt: Date @dateformat
+  _rev: String
+  _key: String
+  Name: String
+  Image: SanityImage
+  Price: Float
+  Shop: String
+  Link: String
+  GiftPost: SanityPost
+  Description: [SanityBlock]
+  _rawImage(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawDescription(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawGiftPost(resolveReferences: SanityResolveReferencesConfiguration): JSON
+}
+
+type SanityImage {
+  _key: String
+  _type: String
+  asset: SanityImageAsset
+  hotspot: SanityImageHotspot
+  crop: SanityImageCrop
+  _rawAsset(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawHotspot(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawCrop(resolveReferences: SanityResolveReferencesConfiguration): JSON
+}
+
+type SanityPost implements SanityDocument & Node @dontInfer {
+  _id: String
+  _type: String
+  _createdAt: Date @dateformat
+  _updatedAt: Date @dateformat
+  _rev: String
+  _key: String
+  title: String
+  slug: SanitySlug
+  DescriptionGoogleText: String
+  Tags: [SanityTag]
+  Image: SanityImage
+  publishedAt: Date @dateformat
+  timesClciked: Float
+  Introduction: [SanityBlock]
+  _rawSlug(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawIntroduction(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawTags(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawImage(resolveReferences: SanityResolveReferencesConfiguration): JSON
+}
+
+type SanityAssetSourceData {
+  _key: String
+  _type: String
+  name: String
+  id: String
+  url: String
+}
+
+type SanityFileAsset implements SanityDocument & Node @dontInfer {
+  _id: String
+  _type: String
+  _createdAt: Date @dateformat
+  _updatedAt: Date @dateformat
+  _rev: String
+  _key: String
+  originalFilename: String
+  label: String
+  title: String
+  description: String
+  sha1hash: String
+  extension: String
+  mimeType: String
+  size: Float
+  assetId: String
+  path: String
+  url: String
+  source: SanityAssetSourceData
+  _rawSource(resolveReferences: SanityResolveReferencesConfiguration): JSON
+}
+
+type SanityImageAsset implements SanityDocument & Node @dontInfer {
+  _id: String
+  _type: String
+  _createdAt: Date @dateformat
+  _updatedAt: Date @dateformat
+  _rev: String
+  _key: String
+  originalFilename: String
+  label: String
+  title: String
+  description: String
+  sha1hash: String
+  extension: String
+  mimeType: String
+  size: Float
+  assetId: String
+  path: String
+  url: String
+  metadata: SanityImageMetadata
+  source: SanityAssetSourceData
+  _rawMetadata(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawSource(resolveReferences: SanityResolveReferencesConfiguration): JSON
+}
+
+type SanityImageCrop {
+  _key: String
+  _type: String
+  top: Float
+  bottom: Float
+  left: Float
+  right: Float
+}
+
+type SanityImageDimensions {
+  _key: String
+  _type: String
+  height: Float
+  width: Float
+  aspectRatio: Float
+}
+
+type SanityImageHotspot {
+  _key: String
+  _type: String
+  x: Float
+  y: Float
+  height: Float
+  width: Float
+}
+
+type SanityImageMetadata {
+  _key: String
+  _type: String
+  location: SanityGeopoint
+  dimensions: SanityImageDimensions
+  palette: SanityImagePalette
+  lqip: String
+  hasAlpha: Boolean
+  isOpaque: Boolean
+  _rawLocation(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawDimensions(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawPalette(resolveReferences: SanityResolveReferencesConfiguration): JSON
+}
+
+type SanityImagePalette {
+  _key: String
+  _type: String
+  darkMuted: SanityImagePaletteSwatch
+  lightVibrant: SanityImagePaletteSwatch
+  darkVibrant: SanityImagePaletteSwatch
+  vibrant: SanityImagePaletteSwatch
+  dominant: SanityImagePaletteSwatch
+  lightMuted: SanityImagePaletteSwatch
+  muted: SanityImagePaletteSwatch
+  _rawDarkMuted(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawLightVibrant(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawDarkVibrant(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawVibrant(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawDominant(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawLightMuted(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawMuted(resolveReferences: SanityResolveReferencesConfiguration): JSON
+}
+
+type SanityImagePaletteSwatch {
+  _key: String
+  _type: String
+  background: String
+  foreground: String
+  population: Float
+  title: String
+}
+
+type SanitySlug {
+  _key: String
+  _type: String
+  current: String
+}
+
+type SanitySpan {
+  _key: String
+  _type: String
+  marks: [String]
+  text: String
+}
+
+type SanityTag {
+  _key: String
+  _type: String
+  value: String
+  label: String
+}
+
+input SanityResolveReferencesConfiguration {
+  """Max depth to resolve references to"""
+  maxDepth: Int!
+}

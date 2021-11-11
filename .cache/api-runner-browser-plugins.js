@@ -1,4 +1,7 @@
 module.exports = [{
+      plugin: require('../node_modules/gatsby-plugin-image/gatsby-browser.js'),
+      options: {"plugins":[]},
+    },{
       plugin: require('../node_modules/gatsby-plugin-google-gtag/gatsby-browser.js'),
       options: {"plugins":[],"trackingIds":["G-5VN7QKW226"]},
     },{
